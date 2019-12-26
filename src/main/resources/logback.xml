@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<configuration debug="true">-->
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} message: %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>D:\info.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="logger.info" level="INFO">
+        <appender-ref ref="FILE" />
+    </logger>
+    <logger name="logger.warn" level="WARN">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="logger.error" level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+</configuration>
